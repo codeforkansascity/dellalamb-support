@@ -12,6 +12,18 @@ func GetClients(c *fiber.Ctx) error {
     return c.JSON(clients)
 }
 
+
+// CreateClient adds a new client to the system.
+//
+// @Summary Create a new client
+// @Description Adds a client with basic info
+// @Tags clients
+// @Accept json
+// @Produce json
+// @Param client body models.Client true "Client info"
+// @Success 201 {object} models.Client
+// @Failure 400 {object} models.ErrorResponse
+// @Router /clients [post]
 func CreateClient(c *fiber.Ctx) error {
     client := new(models.Client)
     if err := c.BodyParser(client); err != nil {

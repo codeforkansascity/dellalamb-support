@@ -1,0 +1,54 @@
+basePath: /
+definitions:
+  models.Client:
+    properties:
+      email:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+    type: object
+  models.ErrorResponse:
+    properties:
+      message:
+        description: |-
+          Error message
+
+          required: true
+        type: string
+    type: object
+host: localhost:3000
+info:
+  contact: {}
+  description: API for Dellalamb support services
+  title: Dellalamb Support API
+  version: "1.0"
+paths:
+  /clients:
+    post:
+      consumes:
+      - application/json
+      description: Adds a client with basic info
+      parameters:
+      - description: Client info
+        in: body
+        name: client
+        required: true
+        schema:
+          $ref: '#/definitions/models.Client'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.Client'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/models.ErrorResponse'
+      summary: Create a new client
+      tags:
+      - clients
+swagger: "2.0"
