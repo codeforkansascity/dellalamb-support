@@ -1,0 +1,42 @@
+# Go build artifacts
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Go workspace files
+go.work
+go.work.sum
+
+# Dependency directories
+vendor/
+
+# SQLite database (local dev only)
+*.db
+
+# Logs and temp files
+*.log
+*.tmp
+
+# IDE/editor configs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Docker artifacts
+*.env
+.env.local
+.env.*.local
+docker-compose.override.yml
+
+# Fiber static files (if added later)
+public/
+uploads/
