@@ -6,6 +6,17 @@ import (
     "github.com/codeforkansascity/dellalamb-support/models"
 )
 
+
+// GetClients retrieves all clients from the database.
+//
+// @Summary Get all clients
+// @Description Retrieves a list of all clients
+// @Tags clients
+// @Accept json
+// @Produce json
+// @Success 200 {array} models.Client
+// @Failure 500 {object} models.ErrorResponse
+// @Router /clients [get]
 func GetClients(c *fiber.Ctx) error {
     var clients []models.Client
     config.DB.Find(&clients)
