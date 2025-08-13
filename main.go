@@ -3,14 +3,13 @@
 // @description API for Dellalamb support services
 // @host localhost:3000
 // @BasePath /
-
-
 package main
 
 import (
     "github.com/gofiber/fiber/v2"
-    "github.com/codeforkansascity/dellalamb-support/config"
-    "github.com/codeforkansascity/dellalamb-support/routes"
+    "dellalamb-support/config"
+    "dellalamb-support/routes"
+    "dellalamb-support/models" // Import models to ensure they are registered with the database
 )
 
 func main() {
