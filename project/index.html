@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LinkUp KC</title>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <a class="visually-hidden" href="#main">Skip to content</a>
+
+    <header class="site">
+      <div
+        class="container"
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 16px;
+          flex-wrap: wrap;
+        "
+      >
+        <div class="brand">
+          <div class="brand-badge" aria-hidden> <img src="images/LinkUp KC Logo 1.png" alt="" class="logo"></div>
+          <div>
+            <div class="brand-title">LinkUp</div>
+            <form action="" class="search-form">
+              <input type="text" placeholder="Search" />
+            </form>
+          </div>
+        </div>
+
+        <nav class="tabs" aria-label="Main navigation">
+          <button class="tab-btn" data-route="home" aria-current="page">
+            <span class="icon" aria-hidden>🏠</span> Home
+          </button>
+          <button class="tab-btn" data-route="contact">
+            <span class="icon" aria-hidden>✉️</span> Contact
+          </button>
+          <button class="tab-btn" data-route="download">
+            <span class="icon" aria-hidden>⬇️</span> Download
+          </button>
+          <button class="tab-btn" data-route="resources">
+            <span class="icon" aria-hidden>📚</span> Resources
+          </button>
+        </nav>
+
+        <div class="controls">
+          <div class="segmented" role="group" aria-label="Text size">
+            <button data-size="0">A−</button>
+            <button data-size="1" class="is-active">A</button>
+            <button data-size="2">A+</button>
+          </div>
+          <button
+            class="theme-btn"
+            id="themeBtn"
+            aria-pressed="false"
+            title="Toggle dark mode"
+          >
+            ☀️/🌙
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="container">
+      <!-- HOME / LANDING -->
+      <section id="page-home" data-page="home">
+        <div class="hero" role="banner">
+          <div class="hero-blob" aria-hidden></div>
+          <h1>Welcome. We make it easy to get help.</h1>
+          <p>
+            Simple words. Big buttons. Works great on phones. You can’t get
+            lost.
+          </p>
+          <div class="cta-grid" style="margin-top: 16px">
+            <button class="cta primary" data-nav="contact">
+              <span class="icon" aria-hidden>✉️</span> Contact us
+            </button>
+            <button class="cta success" data-nav="download">
+              <span class="icon" aria-hidden>⬇️</span> Get the app
+            </button>
+            <button class="cta violet" data-nav="resources">
+              <span class="icon" aria-hidden>📚</span> Find resources
+            </button>
+          </div>
+        </div>
+
+        <div class="grid cols-2" style="margin-top: 18px">
+          <article class="card">
+            <h3>🗣️ Simple words</h3>
+            <p>
+              We use short sentences and clear steps. If something is hard, we
+              show it step by step.
+            </p>
+          </article>
+          <article class="card">
+            <h3>🔲 Big buttons</h3>
+            <p>
+              Every action has a large button you can tap. It also works with
+              keyboard and screen readers.
+            </p>
+          </article>
+          <article class="card">
+            <h3>🌐 Your language</h3>
+            <p>
+              Need another language? Use your browser’s translate or ask us to
+              add your language.
+            </p>
+          </article>
+          <article class="card">
+            <h3>🔒 Safe & private</h3>
+            <p>
+              We only ask for what we need. We do not share your data without
+              permission.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="page-contact" data-page="contact" hidden>
+        <header style="margin-bottom: 12px">
+          <h2 style="margin: 0; font-size: 32px; letter-spacing: -0.02em">
+            Contact us
+          </h2>
+          <p class="muted">
+            Fill in this short form. We will get back to you soon.
+          </p>
+        </header>
+
+        <div class="grid cols-2">
+          <form id="contactForm" class="card" aria-describedby="contactHelp">
+            <div>
+              <label for="name">Your name</label>
+              <input id="name" name="name" required />
+            </div>
+            <div style="margin-top: 10px">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required />
+            </div>
+            <div style="margin-top: 10px">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+            <div
+              style="
+                margin-top: 12px;
+                display: flex;
+                gap: 10px;
+                align-items: center;
+              "
+            >
+              <button type="submit" class="btn">Send message</button>
+              <span id="contactStatus" class="pill" aria-live="polite"></span>
+            </div>
+            <p id="contactHelp" class="muted" style="margin-top: 10px">
+              We usually reply within 1–2 business days.
+            </p>
+          </form>
+
+          <div class="grid" style="gap: 16px">
+            <article class="card">
+              <h3>📞 Call us</h3>
+              <p>Phone: <a href="tel:+18165551234">(816) 555‑1234</a></p>
+            </article>
+            <article class="card">
+              <h3>📍 Visit us</h3>
+              <p>
+                123 Main Street, Kansas City, MO<br /><span class="muted"
+                  >Mon–Fri, 9:00–5:00</span
+                >
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- DOWNLOAD -->
+      <section id="page-download" data-page="download" hidden>
+        <header style="margin-bottom: 12px">
+          <h2 style="margin: 0; font-size: 32px; letter-spacing: -0.02em">
+            Get the app
+          </h2>
+          <p class="muted">
+            Choose your device. Tap the button. If you need help, contact us.
+          </p>
+        </header>
+
+        <div class="grid">
+          <a
+            class="card"
+            href="/files/linkup-android.apk"
+            style="text-decoration: none; color: inherit"
+            ><h3>🤖 Android</h3>
+            <p class="muted">Download the Android app (.apk)</p></a
+          >
+          <a
+            class="card"
+            href="/files/linkup-ios"
+            style="text-decoration: none; color: inherit"
+            ><h3>📱 iPhone / iPad</h3>
+            <p class="muted">Open the App Store page</p></a
+          >
+          <a
+            class="card"
+            href="/files/linkup-desktop"
+            style="text-decoration: none; color: inherit"
+            ><h3>🖥️ Desktop</h3>
+            <p class="muted">Use the web version on your computer</p></a
+          >
+        </div>
+
+        <div class="grid cols-2" style="margin-top: 18px">
+          <article class="card">
+            <h3>🧩 How to install on Android</h3>
+            <ol>
+              <li>Tap the Android button above.</li>
+              <li>Open the downloaded file.</li>
+              <li>Follow the on‑screen steps.</li>
+            </ol>
+          </article>
+          <article class="card">
+            <h3>🆘 Need help?</h3>
+            <p>
+              Call us at <a href="tel:+18165551234">(816) 555‑1234</a>. We can
+              guide you step by step.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- RESOURCES (rendered by JS from RESOURCES_GROUPS) -->
+      <section id="page-resources" data-page="resources" hidden>
+        <header style="margin-bottom: 12px">
+          <h2 style="margin: 0; font-size: 32px; letter-spacing: -0.02em">
+            Resources
+          </h2>
+          <p class="muted">Tap a box to see help in that area.</p>
+        </header>
+        <div id="resourcesGrid" class="grid cols-3"></div>
+        <article class="card" style="margin-top: 18px">
+          <h3>🔎 Don’t see what you need?</h3>
+          <p>
+            Send us a message on the <a href="#contact">Contact</a> page. We’ll
+            help you find it.
+          </p>
+        </article>
+      </section>
+
+      <!-- TESTS -->
+      <section id="page-tests" data-page="tests" hidden>
+        <header style="margin-bottom: 12px">
+          <h2 style="margin: 0; font-size: 28px; letter-spacing: -0.02em">
+            Developer tests
+          </h2>
+          <p class="muted">Quick smoke tests to sanity‑check logic.</p>
+        </header>
+        <ul id="testList" class="grid"></ul>
+        <p id="testSummary" style="margin-top: 10px; font-weight: 800"></p>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container" style="text-align: center; padding: 18px 0">
+        <p>
+          Need help? Call <a href="tel:+18165551234">(816) 555‑1234</a> or email
+          <a href="mailto:hello@example.org">hello@example.org</a>
+        </p>
+        <p>
+          © <span id="year"></span> LinkUp. All rights reserved.
+          <button class="pill" id="openTestsBtn" style="margin-left: 8px">
+            Open tests
+          </button>
+        </p>
+        <p class="muted">
+          Use your browser’s translate to see this page in your language.
+        </p>
+      </div>
+    </footer>
+
+    <div class="mobile-bar">
+      <button class="cta primary" data-nav="contact">Contact</button>
+      <button class="cta violet" data-nav="resources">Resources</button>
+    </div>
+
+    <script>
+      // -------------------------
+      // Data (kept identical to React version where applicable)
+      // -------------------------
+      const RESOURCES_GROUPS = [
+        {
+          title: "Housing & Shelter",
+          desc: "Find shelters and renter help.",
+          links: [
+            { label: "Shelters", href: "#" },
+            { label: "Tenant help", href: "#" },
+          ],
+        },
+        {
+          title: "Food & Nutrition",
+          desc: "Food pantries and markets.",
+          links: [
+            { label: "Food pantries", href: "#" },
+            { label: "Ethnic markets", href: "#" },
+          ],
+        },
+        {
+          title: "Healthcare",
+          desc: "Clinics and mental health.",
+          links: [
+            { label: "Clinics", href: "#" },
+            { label: "Mental health", href: "#" },
+          ],
+        },
+        {
+          title: "English & Education",
+          desc: "ESL, GED, citizenship.",
+          links: [
+            { label: "ESL classes", href: "#" },
+            { label: "GED programs", href: "#" },
+          ],
+        },
+        {
+          title: "Jobs & Training",
+          desc: "Job search and training.",
+          links: [
+            { label: "Job search", href: "#" },
+            { label: "Training", href: "#" },
+          ],
+        },
+        {
+          title: "Legal Support",
+          desc: "Immigration and legal aid.",
+          links: [
+            { label: "Immigration help", href: "#" },
+            { label: "Legal aid", href: "#" },
+          ],
+        },
+      ];
+
+      // -------------------------
+      // Utilities
+      // -------------------------
+      function getTextSizeClass(size) {
+        if (size === 0) return 17; // px
+        if (size === 2) return 20;
+        return 18; // default
+      }
+
+      function setTextSize(sizeIndex) {
+        const px = getTextSizeClass(sizeIndex);
+        document.documentElement.style.setProperty("--fs-base", px + "px");
+        document
+          .querySelectorAll(".segmented button")
+          .forEach((btn) =>
+            btn.classList.toggle("is-active", btn.dataset.size == sizeIndex)
+          );
+        localStorage.setItem("textSize", String(sizeIndex));
+      }
+
+      function setTheme(theme) {
+        // theme: 'light' | 'dark' | 'system'
+        document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+        const pressed = theme === "dark" ? true : false;
+        document
+          .getElementById("themeBtn")
+          .setAttribute("aria-pressed", String(pressed));
+      }
+
+      function routeTo(name) {
+        // Update hash and render
+        if (!name) name = "home";
+        location.hash = "#" + name;
+      }
+
+      function renderRoute() {
+        const route = location.hash.replace("#", "") || "home";
+        // Toggle aria-current on nav
+        document.querySelectorAll(".tab-btn").forEach((btn) => {
+          const active = btn.dataset.route === route;
+          btn.setAttribute("aria-current", active ? "page" : "false");
+        });
+        // Show selected section
+        document.querySelectorAll("[data-page]").forEach((sec) => {
+          const isActive = sec.dataset.page === route;
+          if (isActive) sec.removeAttribute("hidden");
+          else sec.setAttribute("hidden", "");
+        });
+        if (route === "tests") runTests();
+        // Focus main for a11y
+        document.getElementById("main").focus({ preventScroll: false });
+      }
+
+      // -------------------------
+      // Init
+      // -------------------------
+      (function init() {
+        // Year in footer
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        // Build resources grid
+        const grid = document.getElementById("resourcesGrid");
+        RESOURCES_GROUPS.forEach((g) => {
+          const sec = document.createElement("section");
+          sec.className = "card";
+          const h = document.createElement("h3");
+          h.textContent = g.title;
+          const p = document.createElement("p");
+          p.className = "muted";
+          p.textContent = g.desc;
+          const links = document.createElement("div");
+          links.className = "list-links";
+          g.links.forEach((l) => {
+            const a = document.createElement("a");
+            a.href = l.href;
+            a.textContent = l.label;
+            links.appendChild(a);
+          });
+          sec.append(h, p, links);
+          grid.appendChild(sec);
+        });
+
+        // Nav buttons
+        document.querySelectorAll("[data-nav], .tab-btn").forEach((el) => {
+          el.addEventListener("click", () =>
+            routeTo(el.dataset.nav || el.dataset.route)
+          );
+        });
+
+        // Mobile deep links
+        if (!location.hash) routeTo("home");
+        else renderRoute();
+        window.addEventListener("hashchange", renderRoute);
+
+        // Text size controls
+        const savedSize = Number(localStorage.getItem("textSize"));
+        setTextSize(Number.isFinite(savedSize) ? savedSize : 1);
+        document
+          .querySelectorAll(".segmented button")
+          .forEach((btn) =>
+            btn.addEventListener("click", () =>
+              setTextSize(Number(btn.dataset.size))
+            )
+          );
+
+        // Theme
+        const savedTheme = localStorage.getItem("theme") || "system";
+        setTheme(savedTheme);
+        document.getElementById("themeBtn").addEventListener("click", () => {
+          const current = document.documentElement.getAttribute("data-theme");
+          setTheme(current === "dark" ? "light" : "dark");
+        });
+
+        // Contact form (demo only)
+        const form = document.getElementById("contactForm");
+        const status = document.getElementById("contactStatus");
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const data = new FormData(form);
+          const name = data.get("name");
+          const email = data.get("email");
+          status.textContent = `Thank you, ${name}. We received your message and will reply to ${email}.`;
+          form.reset();
+          document.getElementById("name").focus();
+        });
+
+        // Footer tests toggle
+        document
+          .getElementById("openTestsBtn")
+          .addEventListener("click", () => routeTo("tests"));
+      })();
+
+      // -------------------------
+      // Tests (ported & expanded from the React version)
+      // -------------------------
+      function runTests() {
+        const tests = [
+          {
+            name: "resources group count is 6",
+            run: () => RESOURCES_GROUPS.length === 6,
+          },
+          {
+            name: "getTextSizeClass returns expected numbers",
+            run: () =>
+              [
+                getTextSizeClass(0) === 17,
+                getTextSizeClass(1) === 18,
+                getTextSizeClass(2) === 20,
+                getTextSizeClass(99) === 18,
+              ].every(Boolean),
+          },
+          {
+            name: "resources grid rendered with 6 cards",
+            run: () =>
+              document.querySelectorAll("#resourcesGrid > .card").length === 6,
+          },
+          {
+            name: "router shows exactly one page",
+            run: () =>
+              document.querySelectorAll("section[data-page]:not([hidden])")
+                .length === 1,
+          },
+        ];
+        const list = document.getElementById("testList");
+        list.innerHTML = "";
+        let passCount = 0;
+        tests.forEach((t) => {
+          const ok = !!t.run();
+          if (ok) passCount++;
+          const li = document.createElement("li");
+          li.className = "test-item " + (ok ? "test-pass" : "test-fail");
+          li.textContent = `${t.name}: ${ok ? "PASS" : "FAIL"}`;
+          list.appendChild(li);
+        });
+        document.getElementById(
+          "testSummary"
+        ).textContent = `${passCount}/${tests.length} tests passing.`;
+      }
+    </script>
+  </body>
+</html>
